@@ -1,4 +1,4 @@
-package com.predict.plus.common;
+package com.predict.plus.core;
 
 /**
  * Hello world!

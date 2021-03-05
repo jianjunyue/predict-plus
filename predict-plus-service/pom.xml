@@ -32,20 +32,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-	
-        <dependency>
-            <groupId>predict-plus</groupId>
-            <artifactId>predict-plus-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        	
-        <dependency>
-            <groupId>predict-plus</groupId>
-            <artifactId>predict-plus-facade</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        
-        		<dependency>
+
+		<dependency>
+			<groupId>predict-plus</groupId>
+			<artifactId>predict-plus-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>predict-plus</groupId>
+			<artifactId>predict-plus-facade</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.16</version>

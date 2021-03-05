@@ -1,0 +1,14 @@
+{
+  "platfrom_phase": [
+    "onlineContextFeaturePhase",
+    "featureReadyStatusPhase",
+    "featurePlatformPhase",
+    "getDimensionDataPhase",
+    "rawFeatureCombinePhase",
+    "rawFeature2ModelFeaturePhase",
+    "predictPhase",
+    "sortPhase",
+    "missPidAppendPhase",
+    "buriedPointPhase"
+  ]
+}
