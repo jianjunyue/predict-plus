@@ -13,10 +13,10 @@ import org.apache.commons.io.FileUtils;
 
 public class ConfigResourceLoad {
 
-	public static Properties loadConfig() {
+	public static Properties loadConfig(String configFile) {
 		Properties properties = new Properties();
 		try {
-			Map<String, String> mapConfig = readConfigFile(Map.class, new HashMap<String, String>());
+			Map<String, String> mapConfig = readConfigFile(Map.class, new HashMap<String, String>(),configFile);
 			mapConfig.keySet().forEach(key -> {
 				properties.setProperty(key, mapConfig.get(key));
 			});
@@ -28,10 +28,10 @@ public class ConfigResourceLoad {
 		return properties;
 	}
 
-	public static <T> T readConfigFile(Class<T> clazz, T defaultValue) {
+	public static <T> T readConfigFile(Class<T> clazz, T defaultValue,String configFile) {
 		try {
 			File file = new File(
-					ConfigResourceLoad.class.getClassLoader().getResource("config/apolloConfig.properties").getFile());
+					ConfigResourceLoad.class.getClassLoader().getResource("config/"+configFile+".properties").getFile());
 
 			String readConfig = FileUtils.readFileToString(file);
 			T t = JSONHelper.deserialize(readConfig, clazz, defaultValue);
@@ -42,7 +42,7 @@ public class ConfigResourceLoad {
 		return defaultValue;
 	}
 
-	public static <T> T readConfigFile(Class<T> clazz, T defaultValue, String resource) {
+	public static <T> T readStrategyFile(Class<T> clazz, T defaultValue, String resource) {
 		try {
 			File file = new File(ConfigResourceLoad.class.getClassLoader().getResource(resource).getFile());
 			String readConfig = FileUtils.readFileToString(file);

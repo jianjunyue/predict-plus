@@ -15,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public final class ApolloConfig {
+	
+	private static String apolloCon="apolloConfig";
 
     private ApolloConfig() {
         throw new IllegalStateException("Utility class");
@@ -22,7 +24,7 @@ public final class ApolloConfig {
 
     public static String getParameter(String para) {
 
-		Properties config =ConfigResourceLoad.loadConfig(); 
+		Properties config =ConfigResourceLoad.loadConfig(apolloCon); 
         return config.getProperty(para, null);
          
     }
@@ -31,13 +33,13 @@ public final class ApolloConfig {
         if (StringUtils.isBlank(para)) {
             return defaultValue;
         }
-		Properties config = ConfigResourceLoad.loadConfig(); 
+		Properties config = ConfigResourceLoad.loadConfig(apolloCon); 
         return config.getProperty(para, defaultValue);
     }
 
     public static String getProperties(String configName, String key) {
         try {
-    		Properties config =ConfigResourceLoad.loadConfig(); 
+    		Properties config =ConfigResourceLoad.loadConfig(apolloCon); 
             return config.getProperty(key, null);
         } catch (Exception ex) {
             return null;

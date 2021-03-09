@@ -1,4 +1,4 @@
-package com.predict.plus.common.context;
+package com.predict.plus.core.context;
 
 import java.util.Map;
   

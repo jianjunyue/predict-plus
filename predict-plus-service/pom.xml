@@ -38,18 +38,17 @@
 			<artifactId>predict-plus-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>predict-plus</groupId>
+			<artifactId>predict-plus-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>predict-plus</groupId>
 			<artifactId>predict-plus-facade</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.16</version>
-			<scope>provided</scope>
-		</dependency>
+ 
 	</dependencies>
 </project>

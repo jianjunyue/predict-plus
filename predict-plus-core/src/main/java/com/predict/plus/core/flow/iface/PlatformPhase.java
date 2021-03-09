@@ -1,7 +1,6 @@
-package com.predict.plus.common.iface;
+package com.predict.plus.core.flow.iface;
 
-import com.predict.plus.common.context.PredictContext;
-
+import com.predict.plus.core.context.PredictContext;
 
 public interface PlatformPhase {
 	 void execute(PredictContext context);

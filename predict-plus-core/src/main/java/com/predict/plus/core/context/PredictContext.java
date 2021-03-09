@@ -1,9 +1,10 @@
-package com.predict.plus.common.context;
+package com.predict.plus.core.context;
 
 import java.util.List;
 import java.util.Map;
 
-import com.predict.plus.common.iface.PlatformPhase;
+import com.predict.plus.core.flow.iface.PlatformPhase;
+import com.predict.plus.facade.request.ModelPredictRequest;
 import com.predict.plus.facade.response.PredictResult;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -44,4 +45,7 @@ public class PredictContext  extends BaseContext{
 	    
 	    @ApiModelProperty("预测执行步骤配置")
 	    private List<PlatformPhase> executePhaseList;
+	    
+	    @ApiModelProperty("请求入参")
+	    private ModelPredictRequest request;
 }

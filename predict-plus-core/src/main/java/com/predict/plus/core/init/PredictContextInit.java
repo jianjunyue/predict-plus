@@ -1,16 +1,18 @@
-package com.predict.plus.common.init;
+package com.predict.plus.core.init;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.predict.plus.common.config.ApolloConfig;
-import com.predict.plus.common.constant.BusinessConstant;
-import com.predict.plus.common.context.PredictContext;
-import com.predict.plus.common.iface.PlatformPhase;
+import com.predict.plus.common.constant.BusinessConstant; 
 import com.predict.plus.common.model.Module;
+import com.predict.plus.core.context.PredictContext;
+import com.predict.plus.core.flow.iface.PlatformPhase;
 import com.predict.plus.facade.request.ModelPredictRequest;
 
+@Service
 public class PredictContextInit {
 
 	@Autowired
@@ -19,6 +21,8 @@ public class PredictContextInit {
 	public PredictContext initContext(ModelPredictRequest request) {
 
 		PredictContext context = new PredictContext();
+		
+		context.setRequest(request);
 
 		context.setModelName(request.getModelName());
 
@@ -27,6 +31,7 @@ public class PredictContextInit {
 		context.setRankId(request.getRankId());
 
 		context.setUserId(request.getUid());
+		
 
 		// 获取预测批量大小
 		Integer batchCount = ApolloConfig.getParameterWithInteger(BusinessConstant.MODEL_PREDICT_BATCH_COUNT);
@@ -52,7 +57,8 @@ public class PredictContextInit {
 	}
 
 	private Module getModule() {
-		return Module.valueOf("platfrom_phase");
+		return Module.PLATFROM_PHASE; 
+		 
 	}
 
 	

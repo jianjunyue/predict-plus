@@ -4,24 +4,20 @@ import java.util.Map;
 
 public class ProductRequest { 
 
-	private String pid;
-	// 产品productId维度附加特征
-	private Map<String, Object> productIdAttributes;
-
-	public String getPid() {
-		return pid;
+	public String getProductId() {
+		return productId;
 	}
-
-	public void setPid(String pid) {
-		this.pid = pid;
+	public void setProductId(String productId) {
+		this.productId = productId;
 	}
-
 	public Map<String, Object> getProductIdAttributes() {
 		return productIdAttributes;
 	}
-
 	public void setProductIdAttributes(Map<String, Object> productIdAttributes) {
 		this.productIdAttributes = productIdAttributes;
 	}
-
+	private String productId;
+	// 产品productId维度附加特征
+	private Map<String, Object> productIdAttributes;
+ 
 }

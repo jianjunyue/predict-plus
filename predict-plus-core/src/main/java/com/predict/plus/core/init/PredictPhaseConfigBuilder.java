@@ -1,4 +1,4 @@
-package com.predict.plus.common.init;
+package com.predict.plus.core.init;
  
 import java.util.HashMap;
 import java.util.List;
@@ -9,14 +9,16 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware; 
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Service;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.predict.plus.common.iface.PlatformPhase;
+import com.google.common.collect.Maps; 
 import com.predict.plus.common.model.Module;
-import com.predict.plus.common.utils.ConfigResourceLoad; 
+import com.predict.plus.common.utils.ConfigResourceLoad;
+import com.predict.plus.core.flow.iface.PlatformPhase; 
  
+@Service
 public class PredictPhaseConfigBuilder  implements ApplicationContextAware {
  
     private static Map<String, List<PlatformPhase>> moduleStrategys =Maps.newHashMap();
@@ -46,7 +48,7 @@ public class PredictPhaseConfigBuilder  implements ApplicationContextAware {
 	
 	 private void loadDefaultStrategies() 
 	 { 
-		 Map<String, List<String>>  strategyMap=  ConfigResourceLoad.readConfigFile(Map.class, new HashMap<String, List<String>>(), "platfrom_strategy.json");
+		 Map<String, List<String>>  strategyMap=  ConfigResourceLoad.readStrategyFile(Map.class, new HashMap<String, List<String>>(), "platfrom_strategy.json");
 		 strategyMap.keySet().forEach(strategyName ->{
 			 List<PlatformPhase> strategyList=  buildRankStrategyList( strategyMap.get(strategyName),PlatformPhase.class);
 			 moduleStrategys.put(strategyName, strategyList);

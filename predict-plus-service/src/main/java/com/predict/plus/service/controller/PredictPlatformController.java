@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.predict.plus.common.init.PredictContextInit;
-import com.predict.plus.common.init.PredictPhaseConfigBuilder;
+import com.predict.plus.core.context.PredictContext;
+import com.predict.plus.core.flow.StrategyManager;
+import com.predict.plus.core.init.PredictContextInit;
 import com.predict.plus.facade.request.ModelPredictRequest;
 import com.predict.plus.facade.response.ModelPredictResponse;
 
@@ -21,6 +22,9 @@ public class PredictPlatformController {
 
 	@Autowired
 	private PredictContextInit predictContextInit;
+	
+	@Autowired
+	private StrategyManager strategyManager;
  
 	
     @PostMapping("/predict")
@@ -30,7 +34,9 @@ public class PredictPlatformController {
     	
     	System.out.println("--------------------------PredictPlatformController--------------------------------");
     	
-    	predictContextInit.initContext(request);
+    	PredictContext context =	predictContextInit.initContext(request);
+    	
+    	strategyManager.run(context);
     	
     	return response;
     	 

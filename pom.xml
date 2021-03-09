@@ -20,6 +20,7 @@
 		<module>predict-plus-facade</module>
 		<module>predict-plus-service</module>
     <module>predict-plus-core</module>
+    <module>predict-plus-algo</module>
   </modules>
  
 	<properties>
