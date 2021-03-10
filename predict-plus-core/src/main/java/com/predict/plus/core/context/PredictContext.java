@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.predict.plus.core.flow.iface.PlatformPhase;
+import com.predict.plus.core.platform.BoosterAndFeatureConfigModel;
 import com.predict.plus.facade.request.ModelPredictRequest;
-import com.predict.plus.facade.response.PredictResult;
+import com.predict.plus.facade.response.PredictResult; 
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -48,4 +49,8 @@ public class PredictContext  extends BaseContext{
 	    
 	    @ApiModelProperty("请求入参")
 	    private ModelPredictRequest request;
+	    
+
+	    @ApiModelProperty("模型和特征映射配置")
+	    private BoosterAndFeatureConfigModel boosterAndFeatureConfigModel;
 }

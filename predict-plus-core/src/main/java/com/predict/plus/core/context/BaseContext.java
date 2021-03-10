@@ -1,5 +1,6 @@
 package com.predict.plus.core.context;
 
+import java.util.HashMap;
 import java.util.Map;
   
 import lombok.Data;
@@ -25,7 +26,7 @@ public class BaseContext {
     /**
      * 耗时记录
      */
-    private Map<String, Long> costTimeMap;
+    private Map<String, Long> costTimeMap=new HashMap<>();
 
     /**
      * 日志开关
