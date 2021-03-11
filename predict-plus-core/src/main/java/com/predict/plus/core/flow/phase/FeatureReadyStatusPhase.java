@@ -24,7 +24,7 @@ import com.predict.plus.core.platform.BoosterAndFeatureConfigModel;
 
 import lombok.extern.slf4j.Slf4j; 
 /**
- * 检查modelName各维度特征同步状态 
+ * 1. 数据同步状态
  */
 @Service
 @Slf4j

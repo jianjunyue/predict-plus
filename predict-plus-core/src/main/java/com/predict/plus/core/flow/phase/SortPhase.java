@@ -6,7 +6,7 @@ import com.predict.plus.core.context.PredictContext;
 import com.predict.plus.core.flow.iface.PlatformPhase;
 
 /**
- * 在线上下文特征初始化封装
+ * 7. 排序
  */
 @Service
 public class SortPhase implements PlatformPhase {

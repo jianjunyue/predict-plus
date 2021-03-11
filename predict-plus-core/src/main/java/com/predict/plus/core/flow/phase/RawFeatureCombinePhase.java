@@ -6,7 +6,7 @@ import com.predict.plus.core.context.PredictContext;
 import com.predict.plus.core.flow.iface.PlatformPhase;
 
 /**
- * 在线上下文特征初始化封装
+ * 4. 原始特征组装
  */
 @Service
 public class RawFeatureCombinePhase implements PlatformPhase {
