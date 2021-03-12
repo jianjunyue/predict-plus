@@ -1,6 +1,6 @@
 package com.predict.plus.facade.response;
 
-public class PredictResult {
+public class PredictScore {
 	
 	private String pid; 
 	private float score;

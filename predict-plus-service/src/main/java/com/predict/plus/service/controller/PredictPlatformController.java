@@ -38,6 +38,8 @@ public class PredictPlatformController {
     	
     	strategyManager.run(context);
     	
+    	response.setPidScoreModelList(context.getPredictScores());
+    	
     	return response;
     	 
     	

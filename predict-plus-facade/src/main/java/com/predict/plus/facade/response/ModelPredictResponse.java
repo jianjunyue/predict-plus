@@ -7,7 +7,7 @@ import java.util.Map;
 public class ModelPredictResponse {
 
 	//返回分数 
-    private List<PredictResult> pidScoreModelList;
+    private List<PredictScore> pidScoreModelList;
 
     //prd维度原始特征 
     private Map<String, Map<String, Object>> prdRawFeatureMap;
@@ -18,11 +18,11 @@ public class ModelPredictResponse {
  
     
 
-    public List<PredictResult> getPidScoreModelList() {
+    public List<PredictScore> getPidScoreModelList() {
 		return pidScoreModelList;
 	}
 
-	public void setPidScoreModelList(List<PredictResult> pidScoreModelList) {
+	public void setPidScoreModelList(List<PredictScore> pidScoreModelList) {
 		this.pidScoreModelList = pidScoreModelList;
 	}
 

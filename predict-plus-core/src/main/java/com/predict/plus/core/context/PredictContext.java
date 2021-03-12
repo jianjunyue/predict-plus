@@ -6,7 +6,7 @@ import java.util.Map;
 import com.predict.plus.core.flow.iface.PlatformPhase;
 import com.predict.plus.core.platform.BoosterAndFeatureConfigModel;
 import com.predict.plus.facade.request.ModelPredictRequest;
-import com.predict.plus.facade.response.PredictResult; 
+import com.predict.plus.facade.response.PredictScore; 
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -42,7 +42,7 @@ public class PredictContext  extends BaseContext{
 	    private Integer featureBatchCount;
 
 	    @ApiModelProperty("预测结果")
-	    private List<PredictResult> predictResults;
+	    private List<PredictScore> predictScores;
 	    
 	    @ApiModelProperty("预测执行步骤配置")
 	    private List<PlatformPhase> executePhaseList;

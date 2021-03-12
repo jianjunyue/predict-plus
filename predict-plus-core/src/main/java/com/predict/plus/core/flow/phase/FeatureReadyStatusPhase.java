@@ -1,5 +1,6 @@
 package com.predict.plus.core.flow.phase;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSON;
+import com.predict.plus.common.utils.ConfigResourceLoad;
 import com.predict.plus.common.utils.LogUtils;
 import com.predict.plus.common.utils.TimeMonitorUtils;
 import com.predict.plus.core.cache.DataCacheManagerHelper;
@@ -89,7 +91,10 @@ public class FeatureReadyStatusPhase implements PlatformPhase {
 
 	                    /*  2.查询redis数据同步状态 */
 	                    long s1 = System.currentTimeMillis();
-	                    Map<String, String> dsStatusMap = dataReadyStatusCacheStrategy.multiGet(dsKeySet);
+	                    Map<String, String> dsStatusMap = null;//dataReadyStatusCacheStrategy.multiGet(dsKeySet);
+	                    
+	                    dsStatusMap =ConfigResourceLoad.readJsonFile(Map.class, new HashMap<String, String>(), "dsStatusMap.json");
+	                    
 	                    long s2 = System.currentTimeMillis();
 	                    Map<String, Long> costTimeMap = context.getCostTimeMap();
 	                    costTimeMap.put("dsStatusMap", s2 - s1);
