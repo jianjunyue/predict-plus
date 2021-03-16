@@ -28,8 +28,8 @@
 			<groupId>ml.dmlc</groupId>
 			<artifactId>xgboost4j</artifactId>
 			<version>0.90</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}\lib\xgboost4j-0.90-criteo-20190702_2.11-win64.jar</systemPath>
+			<!-- <scope>system</scope>-->
+			<!-- <systemPath>${project.basedir}\lib\xgboost4j-0.90-criteo-20190702_2.11-win64.jar</systemPath>-->
 			<exclusions>
 				<exclusion>
 					<groupId>org.ow2.asm</groupId>
